@@ -38,4 +38,3 @@ class CompanyStudent(models.Model):
         validators=[
             MinValueValidator(1)
         ])
-    

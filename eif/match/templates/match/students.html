@@ -1,0 +1,8 @@
+{% extends "match/base.html" %}
+{% block content %}
+    <h1>Students</h1>
+
+    {% for student in students %}
+        <h2>{{ student.first_name }} {{ student.last_name }}</h2>
+    {% endfor %}
+{% endblock content %}
