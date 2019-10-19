@@ -8,5 +8,6 @@ urlpatterns = [
     path('students', views.students, name='match-students'),
     path('companies', views.companies, name='match-companies'),
     path('job_descriptions', views.jobs, name='job-descriptions'),
-    path('match_for_interviews', views.match_interviews, name='match-match')
+    path('match_for_interviews', views.match_interviews, name='match-match'),
+    path('student_rank', views.student_rank, name='add-student-rank')
 ]

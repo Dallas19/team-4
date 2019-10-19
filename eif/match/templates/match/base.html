@@ -27,6 +27,8 @@
             </li>
             <li class="nav-item" style="color: black">
               <a class="nav-link" href="{% url 'job-descriptions' %}">Job Descriptions</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add-student-rank' %}">Student Rank</a>
             </li>
             {% if user.is_superuser %}
               <!-- For testing purposes only -->
