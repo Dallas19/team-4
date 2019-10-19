@@ -50,7 +50,8 @@ def students(request):
 
 def jobs(request):
     jobs = Job.objects.order_by('name')
-    context = {'jobs': jobs}
+    companies = Company.objects.order_by('company_name')
+    context = {'jobs': jobs, 'companies': companies}
     return render(request, 'match/job-descriptions.html', context)
 
 

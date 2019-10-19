@@ -43,26 +43,13 @@
     </ul>
   </div>
   {% for job in jobs %}
-    hi
-    {% endfor %}
-  <!-- <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Job Name</th>
-          <th scope="col">Student Name</th>
-        </tr>
-      </thead>
-      <tbody>
-          {% for job, students in jobs %}
-              {% for student in students %}
-                  <tr>
-                      <th scope="row">{{ job.id }}</th>
-                      <td>{{ job.name }}</td>
-                      <td>{{ student.first_name }} {{ student.last_name }}</td>
-                  </tr>
-              {% endfor %}
-          {% endfor %}
-      </tbody>
-    </table> -->
+        <div class="card" style="width: 18rem; margin-top: 20px;">
+       <div class="card-body">
+         <h5 class="card-title"> {{ job.name }}</h5>
+         <h6 class="card-subtitle mb-2 text-muted"> {{ job.location }}</h6>
+         <h6 class="card-subtitle mb-2 text-muted"> Pay: {{ job.compensation }}</h6>
+         <p class="card-text"> {{ job.description }}</p>
+       </div>
+      </div>
+  {% endfor %}
 {% endblock content %}
