@@ -31,16 +31,24 @@ def get_students(conn):
 
 
 def parse_jobs(jobs):
+  print("Before Parse Jobs")
+  print(jobs)
   final = {}
   groups = [(k, v) for k, v in groupby(jobs, key=lambda x: x[2])]
   for job, info in groups:
-    ordered = sorted(info, key=lambda x: x[3])
+    ordered = sorted(info, key=lambda x: print(x[3]))
+    print(job)
+    print(info)
+    print(ordered)
     parsed = list(map(lambda x: x[0] + ' ' + x[1], ordered))
+    print(parsed)
     final[job] = parsed
 
   return final
 
 def parse_students(students):
+  print("Before Parse Students")
+  print(students)
   final = {}
   groups = [(k, v) for k, v in groupby(students, key=lambda x: x[0] + ' ' + x[1])]
   for label, info in groups:
@@ -51,7 +59,7 @@ def parse_students(students):
   return final
 
 
-def get_match_info(path='../db.sqlite3'):
+def get_match_info(path='db.sqlite3'):
   conn = connect(path)
   data = get_jobs(conn), get_students(conn)
   conn.close()

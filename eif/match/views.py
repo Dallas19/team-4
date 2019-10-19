@@ -1,9 +1,8 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from .models import *
-from eif.match.fetch import get_match_info
-from eif.matching.matching import match
-
+from match.fetch import get_match_info
+from match.matching.matching import match
 
 # Create your views here.
 def index(request):
@@ -23,9 +22,11 @@ def students(request):
     students = Student.objects.order_by('last_name')
     context = {'students': students}
     return render(request, 'match/students.html', context)
-    
 
-def matching(request):
-  jobs, students = get_match_info()
-  return render(request, match(jobs, students, 2))
+def match_interviews(request):
+    jobs, students = get_match_info()
+    # 2 is max number of students that can be interviewed for a position
+    match_results = match(jobs, students, 2)
+    print(match_results)
+    return render(request, 'match/match_results.html')
 
