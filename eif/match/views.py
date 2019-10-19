@@ -45,8 +45,23 @@ def match_interviews(request):
             jobs_dict[job.id].append(rank.student.id)
     # jobs, students = get_match_info()
     # 2 is max number of students that can be interviewed for a position
-    match_results = match(jobs_dict, students_dict, 2)
-    print("Match Results")
-    print(match_results)
-    return render(request, 'match/match_results.html')
+    match_results_dict = match(jobs_dict, students_dict, 2)
+    print(match_results_dict)
+
+    # Construct a new dict with objects instead of keys
+    match_results_converted = {}
+    for job, student_array in match_results_dict.items():
+        job_object = get_object_or_404(Job, pk=job)
+        match_results_converted[job_object] = []
+        for student in student_array:
+            student_object = get_object_or_404(Student, pk=student)
+            match_results_converted[job_object].append(student_object)
+    print(match_results_converted)
+
+    for job in match_results_converted:
+        print(match_results_converted[job])
+
+    context = {'jobs': match_results_converted.items()}
+
+    return render(request, 'match/match_results.html', context)
 
