@@ -22,6 +22,6 @@ Changes to Database Tables - reduction of redundancy - 11:40pm
 
 Further changes to table - expansion to 5 tables - respective of keys. 
 
-Change smade to table made it 3NF.
+Changes made to table made it 3NF.
 
 
