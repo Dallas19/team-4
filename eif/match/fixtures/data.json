@@ -1,7 +1,7 @@
 [
     {
         "model": "match.student",
-        "pk": 1,
+        "pk": 123,
         "fields": {
             "resume": "http://www.africau.edu/images/default/sample.pdf",
             "GPA": 3.99,
@@ -11,7 +11,7 @@
     },
     {
         "model": "match.student",
-        "pk": 2,
+        "pk": 246,
         "fields": {
             "resume": "http://www.africau.edu/images/default/sample2.pdf",
             "GPA": 3.74,
@@ -21,7 +21,7 @@
     },
     {
         "model": "match.company",
-        "pk": 1,
+        "pk": 12,
         "fields": {
             "about_info": "The most amazing company",
             "company_location": "Plano, TX",
@@ -30,7 +30,7 @@
     },
     {
         "model": "match.job",
-        "pk": 2,
+        "pk": 10,
         "fields": {
             "description": "Amazing Job #1 is amazing because lalalala",
             "location": "Plano, TX",
@@ -42,7 +42,7 @@
     },
     {
         "model": "match.job",
-        "pk": 3,
+        "pk": 11,
         "fields": {
             "description": "Amazing Job #2 is amazing because lalalala",
             "location": "Plano, TX",
@@ -54,7 +54,7 @@
     },
     {
         "model": "match.job",
-        "pk": 4,
+        "pk": 12,
         "fields": {
             "description": "Amazing Job #3 is amazing because lalalala",
             "location": "Plano, TX",
@@ -66,7 +66,7 @@
     },
     {
         "model": "match.job",
-        "pk": 5,
+        "pk": 13,
         "fields": {
             "description": "Amazing Job #4 is amazing because lalalala",
             "location": "Plano, TX",
@@ -78,7 +78,7 @@
     },
     {
         "model": "match.job",
-        "pk": 6,
+        "pk": 14,
         "fields": {
             "description": "Amazing Job #5 is amazing because lalalala",
             "location": "Plano, TX",
@@ -90,7 +90,7 @@
     },
     {
         "model": "match.job",
-        "pk": 7,
+        "pk": 15,
         "fields": {
             "description": "Amazing Job #6 is amazing because lalalala",
             "location": "Plano, TX",
@@ -102,7 +102,7 @@
     },
     {
         "model": "match.job",
-        "pk": 8,
+        "pk": 16,
         "fields": {
             "description": "Amazing Job #7 is amazing because lalalala",
             "location": "Plano, TX",
@@ -114,7 +114,7 @@
     },
     {
         "model": "match.job",
-        "pk": 2,
+        "pk": 17,
         "fields": {
             "description": "Amazing Job #8 is amazing because lalalala",
             "location": "Sabrine, TX",
@@ -126,7 +126,7 @@
     },
     {
         "model": "match.job",
-        "pk": 2,
+        "pk": 18,
         "fields": {
             "description": "Amazing Job #9 is amazing because lalalala",
             "location": "Squirtle, TX",
@@ -138,23 +138,32 @@
     },
     {
         "model": "match.job",
-        "pk": 2,
+        "pk": 19,
         "fields": {
             "description": "Amazing Job #10 is amazing because lalalala",
             "location": "Antonio, TX",
             "compensation": 7000,
             "name": "Amazing Job #10",
             "number_of_positions": 1,
-            "company": 1,
+            "company": 1
         }
     },
     {
         "model": "match.StudentJob",
-        "pk": 1,
+        "pk": 246,
         "fields": {
             "job": 1,
             "rank": 1,
-            "student": 2,
+            "student": 246
+        }
+    },
+     {
+        "model": "match.StudentJob",
+        "pk": 123,
+        "fields": {
+            "job": 2,
+            "rank": 1,
+            "student": 123
         }
     },
     {
@@ -162,8 +171,17 @@
         "pk": 1,
         "fields": {
             "job": "Amazing Job #10",
-            "student": 1,
             "rank": 1,
+            "student": 1
+        }
+    },
+    {
+        "model": "match.CompanyStudent",
+        "pk": 257,
+        "fields": {
+            "job": "Amazing Job #10",
+            "rank": 2,
+            "student": 3
         }
     }
 ]
