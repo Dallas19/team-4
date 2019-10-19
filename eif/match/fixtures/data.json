@@ -135,18 +135,6 @@
     },
     {
         "model": "match.job",
-        "pk": 702,
-        "fields": {
-            "description": "Good enough job",
-            "location": "Plano, TX",
-            "compensation": 5050,
-            "name": "Teacher",
-            "number_of_positions": 1,
-            "company": 401
-        }
-    },
-    {
-        "model": "match.job",
         "pk": 703,
         "fields": {
             "description": "Ok enough job",
@@ -155,18 +143,6 @@
             "name": "HR Manager",
             "number_of_positions": 1,
             "company": 401
-        }
-    },
-    {
-        "model": "match.job",
-        "pk": 704,
-        "fields": {
-            "description": "Ok enough job",
-            "location": "Plano, TX",
-            "compensation": 5150,
-            "name": "API Designer",
-            "number_of_positions": 1,
-            "company": 402
         }
     },
     {
@@ -181,18 +157,7 @@
             "company": 402
         }
     },
-    {
-        "model": "match.job",
-        "pk": 706,
-        "fields": {
-            "description": "Ok enough job",
-            "location": "Plano, TX",
-            "compensation": 5300,
-            "name": "Amazing Job #3",
-            "number_of_positions": 1,
-            "company": 401
-        }
-    },
+
     {
         "model": "match.job",
         "pk": 707,
@@ -227,6 +192,42 @@
             "name": "Web Reviewer",
             "number_of_positions": 1,
             "company": 401
+        }
+    },
+    {
+        "model": "match.job",
+        "pk": 702,
+        "fields": {
+             "description": "Good enough job",
+            "location": "Plano, TX",
+            "compensation": 5050,
+            "name": "Teacher",
+            "number_of_positions": 1,
+            "company": 401
+        }
+    },
+    {
+        "model": "match.job",
+        "pk": 706,
+        "fields": {
+            "description": "Ok enough job",
+            "location": "Plano, TX",
+            "compensation": 5300,
+            "name": "Amazing Job #3",
+            "number_of_positions": 1,
+            "company": 402
+        }
+    },
+    {
+        "model": "match.job",
+        "pk": 704,
+        "fields": {
+            "description": "Ok enough job",
+            "location": "Plano, TX",
+            "compensation": 5150,
+            "name": "API Designer",
+            "number_of_positions": 1,
+            "company": 402
         }
     },
     {
