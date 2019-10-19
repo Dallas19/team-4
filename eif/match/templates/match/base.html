@@ -24,6 +24,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'match-companies' %}">Companies</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add-student-rank' %}">Student Rank</a>
+            </li>
             {% if user.is_superuser %}
               <!-- For testing purposes only -->
               <!-- Tests on Club 4 USN with players with id 8-10 and games 7-9 -->

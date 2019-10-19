@@ -8,11 +8,15 @@ class Student(models.Model):
     GPA = models.FloatField()
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+    def __str__(self):
+        return self.first_name + " " + self.last_name
 
 class Company(models.Model):
     about_info = models.CharField(max_length=200)
     company_location = models.CharField(max_length=50)
     company_name = models.CharField(max_length=50)
+    def __str__(self):
+        return self.company_name
 
 class Job(models.Model):
     description = models.CharField(max_length=200)
@@ -21,6 +25,8 @@ class Job(models.Model):
     name = models.CharField(max_length=50)
     number_of_positions = models.IntegerField()
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
 
 class StudentJob(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE)

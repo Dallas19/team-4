@@ -1,8 +1,10 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
+from django.forms import ModelForm, forms
 from .models import *
 from match.fetch import get_match_info
 from match.matching.matching import match
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -13,10 +15,33 @@ def companies(request):
     context = {'companies': companies}
     return render(request, 'match/companies.html', context)
 
-def student(request, student_id, job_id):
+def student(request, student_id):
     student = get_object_or_404(Student, pk=student_id)
-    job = get_object_or_404(Job, pk=job_id)
-    return render(request, 'match/student.html', {'student': student}, {'job': job})
+    return render(request, 'match/student.html', {'student': student})
+
+class StudentRankForm(ModelForm):
+    class Meta:
+        model = StudentJob
+        fields = ('job', 'rank', 'student')
+
+def student_rank(request):
+    form = StudentRankForm(request.POST or None)
+    if form.is_valid():
+        print(form.cleaned_data.get("job"))
+        print(form.cleaned_data.get("rank"))
+        print(form.cleaned_data.get("student"))
+        messages.success(request, f'Rank added!')
+    return render(request, 'match/student_rank.html', {"form": form})
+
+    # return render(request, 'match/student_rank.html')
+    # student = get_object_or_404(Student, pk=student_id)
+    # form = StudentRankForm(request.POST or None, initial={'student': student_id})
+    # if form.is_valid():
+    #      = form.cleaned_data.get("name")
+    #     form.save()
+    #     messages.success(request, f'Club name changed to {new_name}!')
+    #     return redirect("club_list")
+    # return render(request, template_name, {"form": form, "club": club})
 
 def students(request):
     students = Student.objects.order_by('last_name')
@@ -64,4 +89,3 @@ def match_interviews(request):
     context = {'jobs': match_results_converted.items()}
 
     return render(request, 'match/match_results.html', context)
-

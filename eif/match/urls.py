@@ -7,5 +7,6 @@ urlpatterns = [
     path('students/<int:student_id>', views.student, name = 'match-student'),
     path('students', views.students, name='match-students'),
     path('companies', views.companies, name='match-companies'),
-    path('match_for_interviews', views.match_interviews, name='match-match')
+    path('match_for_interviews', views.match_interviews, name='match-match'),
+    path('student_rank', views.student_rank, name='add-student-rank')
 ]
