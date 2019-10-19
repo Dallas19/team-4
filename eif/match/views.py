@@ -12,9 +12,10 @@ def companies(request):
     context = {'companies': companies}
     return render(request, 'match/companies.html', context)
 
-def student(request, student_id):
+def student(request, student_id, job_id):
     student = get_object_or_404(Student, pk=student_id)
-    return render(request, 'match/student.html', {'student': student})
+    job = get_object_or_404(Job, pk=job_id)
+    return render(request, 'match/student.html', {'student': student}, {'job': job})
 
 def students(request):
     students = Student.objects.order_by('last_name')
