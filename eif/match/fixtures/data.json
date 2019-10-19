@@ -1,0 +1,12 @@
+[
+    {
+        "model": "match.student",
+        "pk": 1,
+        "fields": {
+            "resume": "http://www.africau.edu/images/default/sample.pdf",
+            "GPA": 3.99,
+            "first_name": "Arami",
+            "last_name": "Llera"
+        }
+    }
+]
