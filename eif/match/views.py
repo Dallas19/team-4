@@ -1,10 +1,11 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.forms import ModelForm, forms
 from .models import *
 from match.fetch import get_match_info
 from match.matching.matching import match
 from django.contrib import messages
+from django.urls import reverse
 
 # Create your views here.
 def index(request):
@@ -15,14 +16,19 @@ def companies(request):
     context = {'companies': companies}
     return render(request, 'match/companies.html', context)
 
-def student(request, student_id):
-    student = get_object_or_404(Student, pk=student_id)
-    return render(request, 'match/student.html', {'student': student})
-
 class StudentRankForm(ModelForm):
     class Meta:
         model = StudentJob
         fields = ('job', 'rank', 'student')
+
+def student(request, student_id):
+    student = get_object_or_404(Student, pk=student_id)
+    student_ranks = StudentJob.objects.filter(student=student.id).order_by('rank')
+    job_rank_names = []
+    for student_rank in student_ranks:
+        job_rank_names.append(student_rank.job.name)
+    print(job_rank_names)
+    return render(request, 'match/student.html', {'student': student, 'job_rank_names': job_rank_names})
 
 def student_rank(request):
     form = StudentRankForm(request.POST or None)
@@ -30,7 +36,20 @@ def student_rank(request):
         print(form.cleaned_data.get("job"))
         print(form.cleaned_data.get("rank"))
         print(form.cleaned_data.get("student"))
+        form.save()
         messages.success(request, f'Rank added!')
+        return HttpResponseRedirect(reverse("match-student", args=(student_id,)))
+    return render(request, 'match/student_rank.html', {"form": form})
+
+def student_rank_individual(request, student_id):
+    form = StudentRankForm(request.POST or None, initial={'student': student_id})
+    if form.is_valid():
+        print(form.cleaned_data.get("job"))
+        print(form.cleaned_data.get("rank"))
+        print(form.cleaned_data.get("student"))
+        form.save()
+        messages.success(request, f'Rank added!')
+        return HttpResponseRedirect(reverse("match-student", args=(student_id,)))
     return render(request, 'match/student_rank.html', {"form": form})
 
     # return render(request, 'match/student_rank.html')
