@@ -17,5 +17,29 @@
             "company_location": "Plano, TX",
             "company_name": "JPMorgan Chase"
         }
+    },
+    {
+        "model": "match.job",
+        "pk": 1,
+        "fields": {
+            "description": "Amazing Job #1 is amazing because lalalala",
+            "location": "Plano, TX",
+            "compensation": 5000,
+            "name": "Amazing Job #1",
+            "number_of_positions": 1,
+            "company": 1
+        }
+    },
+    {
+        "model": "match.job",
+        "pk": 2,
+        "fields": {
+            "description": "Amazing Job #2 is amazing because lalalala",
+            "location": "Plano, TX",
+            "compensation": 7000,
+            "name": "Amazing Job #2",
+            "number_of_positions": 1,
+            "company": 1
+        }
     }
 ]
