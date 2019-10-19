@@ -23,6 +23,12 @@ def students(request):
     context = {'students': students}
     return render(request, 'match/students.html', context)
 
+def jobs(request):
+    jobs = Job.objects.order_by('name')
+    context = {'jobs': jobs}
+    return render(request, 'match/job-descriptions.html', context)
+
+
 def match_interviews(request):
     # Get the data
     # Loop through the students
@@ -64,4 +70,3 @@ def match_interviews(request):
     context = {'jobs': match_results_converted.items()}
 
     return render(request, 'match/match_results.html', context)
-

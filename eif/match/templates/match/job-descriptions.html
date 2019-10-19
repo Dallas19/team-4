@@ -1,0 +1,68 @@
+{% extends "match/base.html" %}
+{% block content %}
+    <h1>Job Descriptions</h1>
+        <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #80A980!important"> Company
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu"> Filter by
+      <li><a href="#">Accenture</a></li>
+      <li><a href="#">City of Dallas</a></li>
+      <li><a href="#">NHB</a></li>
+    </ul>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #80A980!important"> Interests
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu"> Filter by
+      <li><a href="#">Policy</a></li>
+      <li><a href="#">Coding</a></li>
+      <li><a href="#">People</a></li>
+    </ul>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #80A980!important"> Location
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu"> Filter by
+      <li><a href="#">Dallas</a></li>
+      <li><a href="#">Houston</a></li>
+      <li><a href="#">New Orleans</a></li>
+    </ul>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #80A980!important"> Public Transportation Access
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu"> Filter by
+      <li><a href="#">Yes</a></li>
+      <li><a href="#">No</a></li>
+    </ul>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #80A980!important"> Endorsements
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu"> Filter by
+      <li><a href="#">STEM</a></li>
+      <li><a href="#">Arts and Humanities</a></li>
+    </ul>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #80A980!important"> Availability
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu"> Filter by
+      <li><a href="#">Full Time</a></li>
+      <li><a href="#">Part Time</a></li>
+    </ul>
+  </div>
+  {% for job in jobs %}
+    hi
+    {% endfor %}
+  <!-- <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Job Name</th>
+          <th scope="col">Student Name</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for job, students in jobs %}
+              {% for student in students %}
+                  <tr>
+                      <th scope="row">{{ job.id }}</th>
+                      <td>{{ job.name }}</td>
+                      <td>{{ student.first_name }} {{ student.last_name }}</td>
+                  </tr>
+              {% endfor %}
+          {% endfor %}
+      </tbody>
+    </table> -->
+{% endblock content %}
