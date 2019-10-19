@@ -19,7 +19,7 @@ def get_info(conn):
 
 
 
-  print(join_table.fetchall().split())
+  print(join_table.fetchall())
 
 
 get_info(connect())
