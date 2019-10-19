@@ -5,14 +5,15 @@ from itertools import chain
 
 
 def match(jobs, students):
-  make_graph(jobs, students)
-  print(make_graph)
+  B = make_graph(jobs, students)
+  print(bipartite.minimum_weight_full_matching(B))
 
 def make_graph(jobs, students):
   B = nx.Graph()
   B.add_nodes_from(jobs.keys(), bipartite=0)
   B.add_nodes_from(students.keys(), bipartite=1)
   B.add_weighted_edges_from( compute_weights(jobs, students) )
+  return B
 
 
 def compute_weights(jobs, students):
@@ -32,3 +33,10 @@ def get_distance(job_id, student_id, rank, students):
     job_rank = inf
 
   return (job_id, student_id, abs(rank - job_rank - 1))
+      
+
+students = {123:[134,135,136],124:[136,134,135]}
+jobs = {134:[123,124],135:[123,124],136:[124,123]}
+
+
+match(jobs, students)
