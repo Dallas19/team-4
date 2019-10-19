@@ -42,6 +42,18 @@
     },
     {
         "model": "match.job",
+        "pk": 47,
+        "fields": {
+            "description": "Amazing Job #1 is amazing because lalalala",
+            "location": "Plano, TX",
+            "compensation": 5000,
+            "name": "Zzzz boys",
+            "number_of_positions": 1,
+            "company": 12
+        }
+    },
+    {
+        "model": "match.job",
         "pk": 11,
         "fields": {
             "description": "Amazing Job #2 is amazing because lalalala",
@@ -170,7 +182,7 @@
         "model": "match.CompanyStudent",
         "pk": 1,
         "fields": {
-            "job": 10,
+            "job": 47,
             "rank": 1,
             "student": 123
         }
