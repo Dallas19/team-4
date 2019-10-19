@@ -24,9 +24,29 @@ def students(request):
     return render(request, 'match/students.html', context)
 
 def match_interviews(request):
-    jobs, students = get_match_info()
+    # Get the data
+    # Loop through the students
+    # This is the dictionary students rank
+    students_dict = {}
+    students = Student.objects.order_by('id')
+    for student in students:
+        # Get their job rankings
+        students_dict[student.id] = []
+        student_ranks = StudentJob.objects.filter(student=student.id).order_by('rank')
+        for rank in student_ranks:
+            students_dict[student.id].append(rank.job.id)
+    # This is the dictionary jobs rank
+    jobs_dict = {}
+    jobs = Job.objects.order_by('id')
+    for job in jobs:
+        jobs_dict[job.id] = []
+        job_ranks = CompanyStudent.objects.filter(job=job.id).order_by('rank')
+        for rank in job_ranks:
+            jobs_dict[job.id].append(rank.student.id)
+    # jobs, students = get_match_info()
     # 2 is max number of students that can be interviewed for a position
-    match_results = match(jobs, students, 2)
+    match_results = match(jobs_dict, students_dict, 2)
+    print("Match Results")
     print(match_results)
     return render(request, 'match/match_results.html')
 
