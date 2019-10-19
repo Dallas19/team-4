@@ -8,5 +8,14 @@
             "first_name": "Arami",
             "last_name": "Llera"
         }
+    },
+    {
+        "model": "match.company",
+        "pk": 1,
+        "fields": {
+            "about_info": "The most amazing company",
+            "company_location": "Plano, TX",
+            "company_name": "JPMorgan Chase"
+        }
     }
 ]

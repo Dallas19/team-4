@@ -12,6 +12,7 @@ class Student(models.Model):
 class Company(models.Model):
     about_info = models.CharField(max_length=200)
     company_location = models.CharField(max_length=50)
+    company_name = models.CharField(max_length=50)
 
 class Job(models.Model):
     description = models.CharField(max_length=200)
