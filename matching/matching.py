@@ -2,11 +2,12 @@ import networkx as nx
 from networkx.algorithms import bipartite
 from math import inf
 from itertools import chain
+from heapq import nsmallest
 
 
-def match(jobs, students):
+def match(jobs, students, interview_limit):
   B = make_graph(jobs, students)
-  print(bipartite.minimum_weight_full_matching(B))
+  return get_matches(B, jobs.keys(), interview_limit)
 
 def make_graph(jobs, students):
   B = nx.Graph()
@@ -33,10 +34,13 @@ def get_distance(job_id, student_id, rank, students):
     job_rank = inf
 
   return (job_id, student_id, abs(rank - job_rank - 1))
-      
-
-students = {123:[134,135,136],124:[136,134,135]}
-jobs = {134:[123,124],135:[123,124],136:[124,123]}
 
 
-match(jobs, students)
+def get_matches(graph, jobs, interview_max):
+  matches = {}
+  for job in jobs:
+    match = nsmallest(interview_max, graph[job].items(), key=lambda w: w[1]['weight'])
+    cleaned = list(map(lambda m: m[0], match))
+    matches[job] = cleaned
+
+  return matches
