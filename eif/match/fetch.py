@@ -8,23 +8,17 @@ def connect(path='../db.sqlite3'):
 def get_jobs(conn):
   c = conn.cursor()
 
-
-
   join_table = c.execute('''
     Select match_student.first_name, match_student.last_name, match_job.name, match_companystudent.rank
     From match_companystudent
     Inner Join match_student On match_companystudent.student_id = match_student.id
     Inner Join match_job On match_companystudent.job_id = match_job.id
-
   ''')
-
 
   return parse_jobs(join_table.fetchall())
 
 def get_students(conn):
   c = conn.cursor()
-
-
 
   join_table = c.execute('''
     Select match_student.first_name, match_student.last_name, match_job.name, match_studentjob.rank
@@ -57,5 +51,9 @@ def parse_students(students):
   return final
 
 
-print(get_students(connect()))
-print(get_jobs(connect()))
+def get_match_info(path='../db.sqlite3'):
+  conn = connect(path)
+  data = get_jobs(conn), get_students(conn)
+  conn.close()
+  
+  return data

@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from .models import *
+from eif.match.fetch import get_match_info
+from eif.matching.matching import match
 
 
 # Create your views here.
@@ -21,3 +23,9 @@ def students(request):
     students = Student.objects.order_by('last_name')
     context = {'students': students}
     return render(request, 'match/students.html', context)
+    
+
+def matching(request):
+  jobs, students = get_match_info()
+  return render(request, match(jobs, students, 2))
+
