@@ -1,8 +1,20 @@
 {% extends "match/base.html" %}
 {% block content %}
     <h1>Students</h1>
-
-    {% for student in students %}
-        <h2> {{ student.first_name }} {{ student.last_name }}</h2>
-    {% endfor %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Student Name</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{ student.first_name }} {{ student.last_name }}</td>
+                    <td><a href="{% url 'add-student-rank-individual' student.id %}" class="btn btn-success" role="button">Add Rank!</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
