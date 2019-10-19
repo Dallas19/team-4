@@ -37,7 +37,7 @@
             "compensation": 5000,
             "name": "Amazing Job #1",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -49,7 +49,7 @@
             "compensation": 5200,
             "name": "Amazing Job #2",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -61,7 +61,7 @@
             "compensation": 5400,
             "name": "Amazing Job #3",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -73,7 +73,7 @@
             "compensation": 5500,
             "name": "Amazing Job #4",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -85,7 +85,7 @@
             "compensation": 5600,
             "name": "Amazing Job #5",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -97,7 +97,7 @@
             "compensation": 5700,
             "name": "Amazing Job #6",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -109,7 +109,7 @@
             "compensation": 5800,
             "name": "Amazing Job #7",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -121,7 +121,7 @@
             "compensation": 5900,
             "name": "Amazing Job #8",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -133,7 +133,7 @@
             "compensation": 6800,
             "name": "Amazing Job #9",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
@@ -145,14 +145,14 @@
             "compensation": 7000,
             "name": "Amazing Job #10",
             "number_of_positions": 1,
-            "company": 1
+            "company": 12
         }
     },
     {
         "model": "match.StudentJob",
         "pk": 246,
         "fields": {
-            "job": 1,
+            "job": 19,
             "rank": 1,
             "student": 246
         }
@@ -161,7 +161,7 @@
         "model": "match.StudentJob",
         "pk": 123,
         "fields": {
-            "job": 2,
+            "job": 17,
             "rank": 1,
             "student": 123
         }
@@ -170,18 +170,18 @@
         "model": "match.CompanyStudent",
         "pk": 1,
         "fields": {
-            "job": "Amazing Job #10",
+            "job": 10,
             "rank": 1,
-            "student": 1
+            "student": 123
         }
     },
     {
         "model": "match.CompanyStudent",
-        "pk": 257,
+        "pk": 23,
         "fields": {
-            "job": "Amazing Job #10",
+            "job": 13,
             "rank": 2,
-            "student": 3
+            "student": 246
         }
     }
 ]
