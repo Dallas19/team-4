@@ -1,0 +1,12 @@
+[
+    {
+
+        "model ": "match.StudentJob",
+        "pk":800,
+        "fields":{
+          "job":701,
+          "rank":2,
+          "student":301
+        }
+      }
+]

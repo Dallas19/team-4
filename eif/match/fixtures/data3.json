@@ -342,7 +342,7 @@
         "model": "match.StudentJob",
         "pk": 813,
         "fields": {
-            "job": 7010,
+            "job": 701,
             "rank": 1,
             "student": 309
         }

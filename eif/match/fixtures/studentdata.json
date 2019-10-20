@@ -1,0 +1,42 @@
+[
+  {
+    "model": "match.student",
+    "pk": 301,
+    "fields": {
+      "resume": "http://www.africau.edu/images/default/sample.pdf",
+      "GPA": 3.99,
+      "first_name": "Arami",
+      "last_name": "Llera"
+    }
+  },
+  {
+    "model": "match.student",
+    "pk": 302,
+    "fields": {
+      "resume": "http://www.africau.edu/images/default/sample.pdf",
+      "GPA": 3.99,
+      "first_name": "Tanner",
+      "last_name": "Marky"
+    }
+  },
+  {
+    "model": "match.student",
+    "pk": 303,
+    "fields": {
+      "resume": "http://www.africau.edu/images/default/sample.pdf",
+      "GPA": 3.99,
+      "first_name": "Lebron",
+      "last_name": "James"
+    }
+  },
+  {
+    "model": "match.student",
+    "pk": 304,
+    "fields": {
+      "resume": "http://www.africau.edu/images/default/sample.pdf",
+      "GPA": 3.99,
+      "first_name": "Psy",
+      "last_name": "Kim"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "model": "match.company",
+        "pk": 401,
+        "fields": {
+          "about_info": "The most amazing company",
+          "company_location": "Plano, TX",
+          "company_name": "JPMorgan Chase"
+        }
+      }
+]

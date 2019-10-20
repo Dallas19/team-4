@@ -1,7 +1,7 @@
 [
     {
         "model": "match.student",
-        "pk": 123,
+        "pk": 1,
         "fields": {
             "resume": "http://www.africau.edu/images/default/sample.pdf",
             "GPA": 3.99,
@@ -11,7 +11,7 @@
     },
     {
         "model": "match.student",
-        "pk": 246,
+        "pk": 2,
         "fields": {
             "resume": "http://www.africau.edu/images/default/sample2.pdf",
             "GPA": 3.74,
@@ -21,7 +21,7 @@
     },
     {
         "model": "match.company",
-        "pk": 12,
+        "pk": 3,
         "fields": {
             "about_info": "The most amazing company",
             "company_location": "Plano, TX",
